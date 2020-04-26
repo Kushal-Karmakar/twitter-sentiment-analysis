@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha256-uEFhyfv3UgzRTnAZ+SEgvYepKKB0FW6RqZLrqfyUNug=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha256-1A78rJEdiWTzco6qdn3igTBv9VupN3Q1ozZNTR4WE/Y=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href= "css/index.css">
+		<link rel="icon" href="img/twitter-icon.png" type="image/png" sizes="16x16">
+		<title>Home | Twitter Sentiment Analysis</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<form id="login-form">
+						<h2 class="text-center">Login</h2>
+						<label style="color: rgb(8,160,230);">Username</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" class="form-control" id="login-username" name="username" placeholder="Enter your username" required="required">
+						</div>
+						<label style="color: rgb(8,160,230);">Password</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="Password" class="form-control" id="login-password" name="Password" placeholder="Enter your password" required="required">
+						</div>
+						
+					</form>
+					<button class="btn btn-default" id="signin-btn" onclick="signin();">Sign In</button>
+					
+				</div>
+				<div class="col-md-5 col-md-offset-2">
+					<form>
+						<h2 class="text-center">Sign Up</h2>
+						<label style="color: rgb(8,160,230);">First Name</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" class="form-control" id="first-name" placeholder="Enter your first name">
+						</div>
+						<label style="color: rgb(8,160,230);">Last Name</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" class="form-control" id="last-name" placeholder="Enter your last name">
+						</div>
+						<label style="color: rgb(8,160,230);">Username</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" class="form-control" id="signup-username" placeholder="Enter your username">
+						</div>
+						<label style="color: rgb(8,160,230);">E-mail</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+							<input type="email" class="form-control" id="email" placeholder="Enter your email">
+						</div>
+						<label style="color: rgb(8,160,230);">Phone No.</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+							<input type="number" class="form-control" id="phone" placeholder="Enter your phone no.">
+						</div>
+						<label style="color: rgb(8,160,230);">Registration No.</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="number" class="form-control" id="registration-no" placeholder="Enter your Registration No">
+						</div>
+						<label style="color: rgb(8,160,230);">Speciality</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+							<input type="text" class="form-control" id="speciality" placeholder="Enter your Treatement Speciality">
+						</div>
+						<label style="color: rgb(8,160,230);">Location</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-phone"></span></span>
+							<input type="text" class="form-control" id="address" placeholder="Choose your City">
+						</div>
+						<label style="color: rgb(8,160,230);">Password</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="Password" class="form-control" id="password" placeholder="Password">
+						</div>
+						<label style="color: rgb(8,160,230);">Confirm Password</label>
+						<div class="input-group">
+							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+							<input type="Password" class="form-control" id="confirm-password" placeholder="Confirm Password">
+						</div>
+					</form>
+					<button class="btn btn-default" id="signup-btn" onclick="signup();">Sign Up</button>
+				</div>
+			</div>
+		<div>
+	</body>
+</html>

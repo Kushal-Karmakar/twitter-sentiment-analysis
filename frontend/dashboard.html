@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/dashboard.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js" integrity="sha256-uEFhyfv3UgzRTnAZ+SEgvYepKKB0FW6RqZLrqfyUNug=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha256-1A78rJEdiWTzco6qdn3igTBv9VupN3Q1ozZNTR4WE/Y=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href= "css/dashboard.css">
+	<link rel="icon" href="img/twitter-icon.png" type="image/png" sizes="16x16">
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+
+	<script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/tabletools/2.2.4/js/dataTables.tableTools.min.js">
+    </script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.css" />
+
+	<title>Dashboard | Twitter Sentiment Analysis</title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">Twitter Sentiment Analysis</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li class="active"><a href="#">Dashboard</a></li>
+	      <li id="admin-panel"><a href="adminPanel.html">Admin Panel</a></li>
+	    </ul>
+	    <ul class="nav navbar-nav navbar-right">
+	      <li><a href="#"><label id="user-message">Hi, Kushal!</label></a></li>
+	      <li><a href="index.html" onclick="logout();"><span class="glyphicon glyphicon-log-in"></span> Sign Out</a></li>
+	    </ul>
+	  </div>
+	</nav>
+  
+	<div class="container-fluid">
+	  <div class="row" style="padding: 10px;">
+	  	<div class="col-md-1 card" style="margin: 0px 20px 0px 0px;">
+	  		<div class="card-description" >
+	  			<img src="img/twitter-icon.png" style="height: 68px; width: 68px;">
+	  		</div>
+	  	</div>
+	  	<div class="col-md-2 card" style="margin: 0px 20px 0px 0px;">
+	  		<div class="card-title">
+	  			<h4>Total tweets</h4>
+	  		</div>
+	  		<div class="card-description">
+	  			<h4 id="total-tweets">0</h4>
+	  		</div>
+	  	</div>
+	  	<div class="col-md-2 card" style="margin: 0px 20px 0px 0px;color: #39ff14;">
+	  		<div class="card-title">
+	  			<h4>Positive tweets</h4>
+	  		</div>
+	  		<div class="card-description">
+	  			<h4 id="positive-tweets">0</h4>
+	  		</div>
+	  	</div>
+	  	<div class="col-md-2 card" style="margin: 0px 20px 0px 0px;color: #ff073a;">
+	  		<div class="card-title">
+	  			<h4>Negative tweets</h4>
+	  		</div>
+	  		<div class="card-description">
+	  			<h4 id="negative-tweets">0</h4>
+	  		</div>
+	  	</div>
+	  	<div class="col-md-2 card" style="margin: 0px 20px 0px 0px;color: #9CC0E7;">
+	  		<div class="card-title">
+	  			<h4>Neutral tweets</h4>
+	  		</div>
+	  		<div class="card-description">
+	  			<h4 id="neutral-tweets">0</h4>
+	  		</div>
+	  	</div>
+	  	<div class="col-md-2 card" style="color: #bc13fe;">
+	  		<div class="card-title">
+	  			<h4>Popular hashtag (#)</h4>
+	  		</div>
+	  		<div class="card-description">
+	  			<h4 id="popular-hashtag">suicide</h4>
+	  		</div>
+	  	</div>
+	  </div>
+	  <div class="row" style="padding: 10px;">
+	  	<div class="col-md-6 card" id="pie-chart" style="padding-right: 10px;"></div>
+	  	<div class="col-md-6 card" id="column-chart"></div>
+	  </div>
+	  <div class="row" style="padding: 10px;">
+	  	<div class="col-md-6 card" id="wordcloud-chart" style="padding-right: 10px;"></div>
+	  	<div class="col-md-6 card" id="timeseries-chart"></div>
+	  </div>
+	  <div class="row" style="padding: 10px;">
+	  	<div class="col-md-12 card">
+	  		<table id="hashtagtable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+				<thead>
+					<tr>
+						<th>Profile Image</th>
+						<th>Screen Name</th>
+						<th>User Description</th>
+						<th>Location</th>
+						<th>Friends</th>
+						<!-- <th>Followers</th>
+						<th>Favourites</th> -->
+						<th>Created at</th>
+						<th>Tweet</th>
+						<!-- <th>Retweet</th> -->
+						<th>Sentiment</th>
+					</tr>
+				</thead>
+			</table>
+	  	</div>
+	  </div>
+	</div>
+
+</body>
+</html>

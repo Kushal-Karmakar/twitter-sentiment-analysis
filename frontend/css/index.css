@@ -1,0 +1,87 @@
+*{
+	margin : 0px;
+	padding : 0px;
+}
+body{
+	background-color : rgb(232,245,253);
+	background-attachment : fixed;
+	background-size : cover;
+	font-family : open sans;
+	color: rgb(8,160,230);
+}
+h1{
+	font-size : 50px;
+	color : rgb(8,160,230);
+	margin-top : 30px;
+	margin-bottom : 60px;
+}
+.col-md-5{
+	background-color : white;
+	/* background : rgba(0,0,0,0.5); */
+	margin-top : 40px;
+	margin-bottom: 40px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+label{
+	font-size : 20px;
+	font-weight : normal;
+	color: rgb(8,160,230);
+}
+.input-group{
+	margin-top : 0px;
+	margin-bottom : 5px;
+}
+.input-group-addon{
+	background : solid white;
+	border-radius : 0px;
+	border : 0px;
+	border-bottom : white;
+	font-size : 18px;
+	color : gray;
+}
+.form-control{
+	background : solid white;
+	border-radius : 0px;
+	border : 0px;
+	border-bottom : white;
+	padding : 10px;
+	font-size : 15px;
+	color : rgb(8,160,230);
+}
+input[type="check-box"]{
+	height : 15px;
+	width : 15px;
+}
+small{
+	font-size : 15px;
+	color : rgb(8,160,230);
+}
+p{
+	font-size : 15px;
+	color : rgb(8,160,230);
+}
+.btn-default{
+	border : 0px;
+	width : 457px;
+	font-size :20px ;
+	margin-top : 20px;
+	margin-bottom : 30px;
+	background-color: rgb(8,160,230);
+	color: white;
+}
+h2{
+	font-size : 30px ;
+	color : rgb(8,160,230);
+}
+
+
+
+
+
+
+
+
+
+
+
+

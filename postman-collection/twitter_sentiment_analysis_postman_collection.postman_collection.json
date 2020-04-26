@@ -1,0 +1,331 @@
+{
+	"variables": [],
+	"info": {
+		"name": "twitter_sentiment_analysis_postman_collection",
+		"_postman_id": "ec28d112-58ed-2298-e33b-13337e3ba0ee",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/register",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\" : \"KushalK\",\n\t\"password\" : \"12345678\",\n\t\"first_name\" : \"Kushal\",\n\t\"last_name\" : \"Karmakar\",\n\t\"address\" : \"Kolkata\",\n\t\"phone_no\" : \"8509462995\",\n\t\"email\" : \"karmakarkushal2@gmail.com\"\n}"
+				},
+				"description": "Resgister a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/users",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/users",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get all users data"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/login",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"KushalK\",\n\t\"password\":\"12345678\"\n}"
+				},
+				"description": "user login"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/promote-user/Admin",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/promote-user/Admin",
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": "user promotion to Admin"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/demote-user/Admin",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/demote-user/Admin",
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": "User demotion"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/analysis",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/analysis",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": "sentiment analysis"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/get-twitter-users-data",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/get-twitter-users-data",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "get twitter users data"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/get-pie-chart-data",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/get-pie-chart-data",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "Pie Charts data"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/hashtags",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/hashtags",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Image",
+							"value": "",
+							"description": "",
+							"type": "file"
+						},
+						{
+							"key": "DeviceId",
+							"value": "e72d2672ef4ae8d5",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "GUID",
+							"value": "67d41e5a-8d9b-45a6-8033-a1df643b2cff",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "UserName",
+							"value": "gain",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/create-hashtag",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/create-hashtag",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hashtag\":\"suicide\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/activate-hashtag/suicide",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/activate-hashtag/suicide",
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/deactivate-hashtag/suicide",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/deactivate-hashtag/suicide",
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/operations",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/operations",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/update-operation/AND",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/update-operation/AND",
+				"method": "PUT",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/twitter-sentiment-analysis/v1/get-wordcloud-data",
+			"request": {
+				"url": "http://localhost:5000/twitter-sentiment-analysis/v1/get-wordcloud-data",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/twitter-sentiment-analysis/v1/get-twitter-dataset?q=suicide&since=2019-01-01&until=2020-04-04&lang=en",
+			"request": {
+				"url": {
+					"raw": "http://127.0.0.1:5000/twitter-sentiment-analysis/v1/get-twitter-dataset?q=suicide&since=2019-01-01&until=2020-04-04&lang=en",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"twitter-sentiment-analysis",
+						"v1",
+						"get-twitter-dataset"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "suicide",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "since",
+							"value": "2019-01-01",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "until",
+							"value": "2020-04-04",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/twitter-sentiment-analysis/v1/get-twitter-dataset-from-specifed-hashtag?since=2018-01-01&until=2020-01-01&lang=en",
+			"request": {
+				"url": {
+					"raw": "http://127.0.0.1:5000/twitter-sentiment-analysis/v1/get-twitter-dataset-from-specifed-hashtag?since=2018-01-01&until=2020-01-01&lang=en",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"twitter-sentiment-analysis",
+						"v1",
+						"get-twitter-dataset-from-specifed-hashtag"
+					],
+					"query": [
+						{
+							"key": "since",
+							"value": "2018-01-01",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "until",
+							"value": "2020-01-01",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

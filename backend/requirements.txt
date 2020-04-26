@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+Flask-Script
+pandas
+textblob
+tweepy
+python-dotenv
